@@ -1,8 +1,9 @@
-import React, { setState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react'
 import StarWarsCard from './StarWarsCard'
+import axios from 'axios'
 
 function StarWarsGrid() {
-    const [starCharacter, setStarCharacter] = setState([])
+    const [starCharacter, setStarCharacter] = useState([])
 
     useEffect(() => {
         axios.get('https://swapi.co/api/people/').then(response => {
