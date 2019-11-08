@@ -22,10 +22,10 @@ function StarWarsGrid() {
     }, [])
     return (
         <Container>
-            {starCharacter.map((person, index) => {
+            {starCharacter.map(person => {
                 return (
                     <StarWarsCard
-                        key={person.index}
+                        key={person.created}
                         name={person.name}
                         height={person.height}
                         mass={person.mass}
