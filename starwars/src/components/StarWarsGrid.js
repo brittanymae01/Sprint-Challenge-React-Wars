@@ -6,16 +6,30 @@ function StarWarsGrid() {
     const [starCharacter, setStarCharacter] = useState([])
 
     useEffect(() => {
-        axios.get('https://swapi.co/api/people/').then(response => {
-            console.log(response.data.results)
-            // setStarCharacter(response.data.results)
+        axios.get('https://lambda-swapi.herokuapp.com/api/people ').then(response => {
+            // console.log(response.data.results)
+            setStarCharacter(response.data.results)
         }).catch(error => {
             console.log('the data was not returned', error)
         })
     }, [])
     return (
         <div>
-            <StarWarsCard />
+            {starCharacter.map((person, index) => {
+                return (
+                    <StarWarsCard
+                        key={person.index}
+                        name={person.name}
+                        height={person.height}
+                        mass={person.mass}
+                        hairColor={person.hair_color}
+                        skinColor={person.skin_color}
+                        eyeColor={person.eye_color}
+                        birthYear={person.birth_year}
+                        gender={person.gender}
+                    />
+                );
+            })}
         </div>
     )
 }
