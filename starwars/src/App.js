@@ -1,6 +1,12 @@
 import React from 'react';
 import './App.css';
 import StarWarsGrid from './components/StarWarsGrid';
+import styled from 'styled-components'
+
+const Header = styled.h1`
+font-size: 3rem;
+color: grey;
+`
 
 const App = () => {
   // Try to think through what state you'll need for this app before starting. Then build out
@@ -12,7 +18,7 @@ const App = () => {
 
   return (
     <div className="App">
-      <h1 className="Header">React Wars</h1>
+      <Header className="Header">React Wars</Header>
       <StarWarsGrid />
     </div>
   );

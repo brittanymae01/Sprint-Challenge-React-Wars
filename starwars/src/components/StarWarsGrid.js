@@ -1,6 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import StarWarsCard from './StarWarsCard'
 import axios from 'axios'
+import styled from 'styled-components'
+
+const Container = styled.div`
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+`
 
 function StarWarsGrid() {
     const [starCharacter, setStarCharacter] = useState([])
@@ -14,7 +21,7 @@ function StarWarsGrid() {
         })
     }, [])
     return (
-        <div>
+        <Container>
             {starCharacter.map((person, index) => {
                 return (
                     <StarWarsCard
@@ -30,7 +37,7 @@ function StarWarsGrid() {
                     />
                 );
             })}
-        </div>
+        </Container>
     )
 }
 
